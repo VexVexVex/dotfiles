@@ -35,7 +35,7 @@ function! s:executor() abort
 endfunction
 nnoremap <leader>x :call <SID>executor()<CR>
 
-"Use J an d K in visual mode to move lines up and down
+" Use J and K in visual mode to move lines up and down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 

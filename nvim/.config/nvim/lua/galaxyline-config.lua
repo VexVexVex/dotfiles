@@ -33,8 +33,8 @@ table.insert(gls.left, {
         t = colors.red
       }
       vim.api
-          .nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode)])
-    (  return '   '
+          .nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
+      return '   '
     end,
     highlight = {colors.red, colors.bg, 'bold'}
   }
@@ -80,11 +80,11 @@ table.insert(gls.left, {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
-    highlight = {colors.yellow, colrs.bg}
+    highlight = {colors.yellow, colors.bg}
   }
 })
 
-table.ionsert(gls.left, {
+table.insert(gls.left, {
   DiagnosticHint = {
     provider = 'DiagnosticHint',
     icon = '  ',
@@ -130,8 +130,8 @@ table.insert(gls.right, {
 
 table.insert(gls.right, {
   GitIcon = {
-    provider = function() reurn '  ' end,
-    condition = contdition.check_git_workspace,
+    provider = function() return '  ' end,
+    condition = condition.check_git_workspace,
     separator = ' ',
     separator_highlight = {'NONE', colors.bg},
     highlight = {colors.violet, colors.bg, 'bold'}
@@ -176,11 +176,11 @@ table.insert(gls.right, {
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
     icon = '  ',
-   highlight = {colors.red, colors.bg}
+    highlight = {colors.red, colors.bg}
   }
 })
 
-table .insert(gls.right, {
+table.insert(gls.right, {
   LineInfo = {
     provider = 'LineColumn',
     separator_highlight = {'NONE', colors.bg},

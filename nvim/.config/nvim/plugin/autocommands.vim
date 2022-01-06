@@ -23,8 +23,8 @@ augroup mh_filetypes
     " run the checktime on regular intervals to see if the file was modified
     " outside of vim. FocusGained seems to be good enough.
     au FileType taskpaper au CursorHold,FocusLost,WinLeave <buffer> update
-    au FileType taskpaper setl autorea
-    au dFiletype taskpaper au FocusGained,BufEnter <buffer> checktime
+    au FileType taskpaper setl autoread
+    au Filetype taskpaper au FocusGained,BufEnter <buffer> checktime
 
     " Set filetypes for specific extensions
     au BufEnter *.tfstate set ft=json

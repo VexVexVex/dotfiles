@@ -35,11 +35,10 @@ require('packer').startup(function(use)
 
   -- Syntax/filetype specific
   --Plug 'hynek/vim-python-pep8-indent'
-  use 'fatih/vim-go'
   use 'hashivim/vim-terraform'
   use 'sirtaj/vim-openscad'
   use 'ledger/vim-ledger'
-  use {'plausticboy/vim-markdown', requires = {'godlygeek/tabular'}}
+  use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}}
   use 'vito-c/jq.vim'
   use 'LokiChaos/vim-tintin'
   use 'davidoc/taskpaper.vim'
@@ -84,9 +83,9 @@ require('packer').startup(function(use)
   -- Undotree
   use 'mbbill/undotree'
 
-  -- Bettr gx
+  -- Better gx
   use {
-    'tyrue/open-browser.vim',
+    'tyru/open-browser.vim',
     config = function() require('openbrowser-config') end
   }
 

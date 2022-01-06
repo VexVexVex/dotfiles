@@ -34,7 +34,7 @@ kubectl() {
     if [[ -n "$KUBECTX" ]]; then
         args+=("--context" "$KUBECTX")
     fi
-    $commands[kubectl] "${args[]}" "$@"@
+    $commands[kubectl] "${args[@]}" "$@"
 }
 
 # Quick command to set the current namespace

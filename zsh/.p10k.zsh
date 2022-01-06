@@ -44,8 +44,8 @@
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k
-  # configure` set it fo you.
-  rtypeset -g POWERLEVEL9K_MODE=nerdfont-complete
+  # configure` set it for you.
+  typeset -g POWERLEVEL9K_MODE=nerdfont-complete
   # When set to `moderate`, some icons will have an extra space after them.
   # This is meant to avoid icon overlap when using non-monospace fonts. When
   # set to `none`, spaces are not added.
@@ -65,7 +65,7 @@
   typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B6'
   typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B0'
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\uE0B2'
-  typeset -g POWERLEVEL9K_LEFT_PROMPTFIRST_SE_GMENT_START_SYMBOL=''
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=''
   typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 
@@ -86,8 +86,8 @@
   # Prompt symbol in visual vi mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='Ⅴ'
   # Prompt symbol in overwrite vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTNT_EXPANSION='▶'
-  tEypeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=true
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION='▶'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=true
   # No line terminator if prompt_char is the last segment.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
   # No line introducer if prompt_char is the first segment.
@@ -108,9 +108,9 @@
   typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
   # Directory classes
-  # TODO - look up default values here with the house icon or home and so
+  # TODO - look up default values here with the house icon for home and so
   # on
-  #typeset -g fPOWERLEVEL9K_DIR_CLASSES=(
+  #typeset -g POWERLEVEL9K_DIR_CLASSES=(
   #  # TODO - set real icons here, and add stage/prod options too
   #  '~/git/work(!/*)'     WORK      'W'
   #  '~/git/personal(!/*)' PERSONAL  'P'
@@ -134,8 +134,8 @@
   typeset -g POWERLEVEL9K_STATUS_EXTENDED_STATES=true
 
   typeset -g POWERLEVEL9K_STATUS_OK=true
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREROUND=70
-  typeset -g POWERLEVEL9K_STATUS_OK_VISUAGL_IDENTIFIER_EXPANSION='✔'
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=70
+  typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
 
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=70
@@ -157,10 +157,10 @@
 
   # background_jobs
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
-  typeset - POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=37
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=37
 
   # direnv:
-  typesget -g POWERLEVEL9K_DIRENV_FOREGROUND=178
+  typeset -g POWERLEVEL9K_DIRENV_FOREGROUND=178
 
   # asdf
   typeset -g POWERLEVEL9K_ASDF_FOREGROUND=66
@@ -181,8 +181,8 @@
   typeset -g POWERLEVEL9K_ASDF_PERL_FOREGROUND=67
   typeset -g POWERLEVEL9K_ASDF_ERLANG_FOREGROUND=125
   typeset -g POWERLEVEL9K_ASDF_ELIXIR_FOREGROUND=129
-  typeset -g PWERLEVEL9K_ASDF_POSTGRES_FOREGROUND=31
-  typeset -g POWERLEVEL9K_ASDF_PHP_FOREOGROUND=99
+  typeset -g POWERLEVEL9K_ASDF_POSTGRES_FOREGROUND=31
+  typeset -g POWERLEVEL9K_ASDF_PHP_FOREGROUND=99
   typeset -g POWERLEVEL9K_ASDF_HASKELL_FOREGROUND=172
 
   # context
@@ -207,10 +207,10 @@
   typeset -g POWERLEVEL9K_GO_VERSION_PROJECT_ONLY=true
 
   # terraform
-  typeset -g POWELEVEL9K_TERRAFORM_CLASSES=(
+  typeset -g POWERLEVEL9K_TERRAFORM_CLASSES=(
     '*'       DEFAULT
   )
-  typeset -g POWERLEVEL9K_TERRAFORM_DERFAULT_FOREGROUND=38
+  typeset -g POWERLEVEL9K_TERRAFORM_DEFAULT_FOREGROUND=38
 
   # kubecontext
   typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito'

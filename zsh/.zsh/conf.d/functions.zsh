@@ -29,7 +29,7 @@ fussh() {
         ssh-keygen -R "$SSH_IP"
     fi
     # Deal with bastions too
-    PROXYJUMP="$(ssh -G "$SSH_ARG" | awk '$1 =="proxyju mp" { print $2 }')"
+    PROXYJUMP="$(ssh -G "$SSH_ARG" | awk '$1 == "proxyjump" { print $2 }')"
     if [[ -n $PROXYJUMP ]]; then
         fussh "$PROXYJUMP"
     fi
@@ -69,7 +69,7 @@ gco() {
         fzf -q "$1" -1)
 }
 
-# Alternative to antgen selfupdate commandi
+# Alternative to antigen selfupdate command
 update-antigen() {
     (cd -q ~/dotfiles/zsh/.zsh
         if [[ ! -f antigen.zsh ]]; then

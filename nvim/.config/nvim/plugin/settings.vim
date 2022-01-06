@@ -15,7 +15,7 @@ set wildmode=longest,list          " Tab expansion like bash
 set ignorecase                     " Ignore case in searches
 set smartcase                      " ... unless the search term has caps
 set iskeyword+=_,$,@,%,#           " Chars not to be word separators
-set sowcmd   h                     " Show commands being typed
+set showcmd                        " Show commands being typed
 set viminfo+=%                     " Save/restore buffer list
 set encoding=utf-8                 " Use utf-8 by default
 set modeline                       " Enable modelines
@@ -32,7 +32,7 @@ set updatetime=500                 " Make CursorHold respond much quicker
 set termguicolors                  " Enable truecolor terminal support
 
 " Line/column settings
-et number             s            " Display line numbers
+set number                         " Display line numbers
 set signcolumn=yes                 " Always display the sign column
 set colorcolumn=80                 " Highlight column 80
 set textwidth=78                   " Word wrapping
@@ -52,5 +52,5 @@ set wmh=0                   " Allow windows to be just a status bar
 " Default tab settings
 set tabstop=8                           " Hard tabs are 8 chars
 set softtabstop=4                       " Tab key indents by 4 chars
-set shiftwidth=4                       " Autoindent by 4 chars
-set expa ndtab                           " Use spaces instead of tabs
+set shiftwidth=4                        " Autoindent by 4 chars
+set expandtab                           " Use spaces instead of tabs

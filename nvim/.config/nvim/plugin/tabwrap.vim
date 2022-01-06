@@ -24,7 +24,7 @@ function! s:softwrap() abort
     inoremap <buffer> <silent> <Down> <C-o>gj
     inoremap <buffer> <silent> <Home> <C-o>g<Home>
     inoremap <buffer> <silent> <End>  <C-o>g<End>
-    noremap <slent> k igk
+    noremap <silent> k gk
     noremap <silent> j gj
     noremap <silent> 0 g0
     noremap <silent> $ g$

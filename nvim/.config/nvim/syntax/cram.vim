@@ -27,7 +27,7 @@ hi link cramCommandStart Keyword
 hi link cramComment Normal
 hi link cramOutput Comment
 
-if exiss("cram_tfold")
+if exists("cram_fold")
   setlocal foldmethod=syntax
 endif
 
