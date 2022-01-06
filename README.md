@@ -12,7 +12,7 @@ install this README file).
 
 ```
 cd ~
-git clone git@github.com:mivok/dotfiles.git
+git clone git@github.com:VexVexVex/dotfiles.git
 cd dotfiles
 brew install stow
 stow -v */
