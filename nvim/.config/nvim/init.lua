@@ -137,7 +137,4 @@ require('packer').startup(function(use)
 
   -- My Plugins
   use 'mivok/vim-minotl'
-
-  -- Debugging LSP
-  vim.lsp.set_log_level("debug")
 end)
