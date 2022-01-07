@@ -44,7 +44,7 @@ require('packer').startup(function(use)
   use 'davidoc/taskpaper.vim'
   use 'pearofducks/ansible-vim'
   use 'bakpakin/fennel.vim'
-
+  use 'fatih/vim-go'
   -- LSP/Autocompletion
   use 'neovim/nvim-lspconfig'
   use {

@@ -93,6 +93,7 @@ brew 'wireguard-tools'
 brew 'xz'
 
 # Programming languages
+brew 'elixir'
 brew 'node'
 brew 'python3'
 brew 'rust'
