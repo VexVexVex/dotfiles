@@ -96,7 +96,10 @@ brew 'xz'
 brew 'node'
 brew 'python3'
 brew 'rust'
-
+brew 'lua'
+brew 'luarocks'
+brew 'cmake'
+brew 'npm'
 # Application wrappers
 brew 'pipx'
 
