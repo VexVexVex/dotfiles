@@ -91,6 +91,7 @@ brew 'wdiff'
 brew 'wireguard-go'
 brew 'wireguard-tools'
 brew 'xz'
+brew 'rancher'
 
 # Programming languages
 brew 'elixir'
