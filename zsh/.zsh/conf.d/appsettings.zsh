@@ -62,12 +62,3 @@ if command -v rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
-# Minikube
-if [[ -f /usr/local/bin/minikube ]]; then
-    if minikube status > /dev/null 2>&1; then
-        eval $(minikube docker-env)
-    else
-        minikube start &
-        eval $(minikube docker-env)
-    fi
-fi
