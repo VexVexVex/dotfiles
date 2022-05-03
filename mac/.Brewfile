@@ -102,6 +102,7 @@ brew 'lua'
 brew 'luarocks'
 brew 'cmake'
 brew 'npm'
+brew 'gimme'
 # Application wrappers
 brew 'pipx'
 
