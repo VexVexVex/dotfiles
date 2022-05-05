@@ -22,7 +22,7 @@ export AWS_SDK_LOAD_CONFIG=1
 
 # Go
 if [[ $(arch) == 'arm64' ]]; then
-    gimme 1.17.5
+    gimme 1.18.1
 else
     gimme stable
 fi
@@ -61,4 +61,6 @@ unsetopt INC_APPEND_HISTORY
 if command -v rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
+
+eval $(thefuck --alias fuck)
 
