@@ -1,0 +1,83 @@
+##  Aliases  ###################################################################
+alias tf=terraform
+
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+export TF_PLUGIN_LANDSCAPE="$(command -v landscape)"
+
+##  Functions  #################################################################
+tf_version() {
+  TF_VERSION=`terraform -version | head -n 1 | awk '{print $2}'`
+
+  echo "Terraform version $TF_VERSION detected"
+
+  if [[ $TF_VERSION != "v0.11.14" ]]; then
+    echo "You are not using a supported version of terraform, only version 0.11.14 is supported"
+    echo "Download from here: https://releases.hashicorp.com/terraform/0.11.14/"
+  fi
+}
+
+tf_command() {
+  # Start building terraform command to run
+  COMMAND=(terraform)
+
+  # Add in what we are doing
+  COMMAND+=($1)
+
+  # Add in new roles if we are using a readonly role
+  if [[ $AWS_PROFILE == "textnow-root-TerraformReadOnly" ]]; then
+    # Enable Read-Only Mode
+    COMMAND+=(-lock=false)
+
+    # Replace IAM Roles with Read-Only Roles
+    COMMAND+=(-var 'workspace_iam_roles={"dev"="arn:aws:iam::193830186226:role/ReadOnly"}')
+    COMMAND+=(-var 'workspace_iam_roles={"qa"="arn:aws:iam::570140098412:role/ReadOnly"}')
+    COMMAND+=(-var 'workspace_iam_roles={"stage"="arn:aws:iam::289160573214:role/ReadOnly"}')
+  fi
+
+  # Add any other options passed in via CLI
+  COMMAND+=($2)
+
+  # If landscape is installed, enable landscape
+  if [ -x "$(command -v landscape)" ]; then
+    echo "Running '$COMMAND | landscape'"
+    "${COMMAND[@]}" | landscape
+  else
+    echo "Running '$COMMAND'"
+    "${COMMAND[@]}"
+  fi
+}
+
+##  Commands  ##################################################################
+
+# Terraform workspace
+# Usage:
+# tfw             : list all workspaces
+# tfw {workspace} : select workspace
+tfw() {
+  tf_version
+  if [ -z $1 ]; then
+    tf workspace list
+  else
+    tf workspace select $1
+  fi
+}
+
+# Terraform plan
+# Usage:
+# tfp {options}
+unalias tfp
+tfp() {
+  tf_version
+  CLI_OPTIONS=$@
+  tf_command 'plan' $CLI_OPTIONS
+}
+
+# Terraform apply
+# Usage:
+# tfa {options}
+unalias tfa
+tfa() {
+  tf_version
+  CLI_OPTIONS=$@
+  tf_command 'apply' $CLI_OPTIONS
+}

@@ -1,0 +1,22 @@
+# OktaAWSCLI
+if [ -f "~/.okta/bash_functions" ]; then
+    . "~/.okta/bash_functions"
+fi
+
+# Functions
+okta_login() {
+  echo "Setting DEV Admin"
+  withokta textnow-dev-Administrator
+  echo "Setting PROD Admin"
+  withokta textnow-prod-Administrator
+  echo "Setting STAGE Admin"
+  withokta textnow-stage-Administrator
+  echo "Setting QA Admin"
+  withokta textnow-qa-Administrator
+  echo "Setting SECURITY Admin"
+  withokta textnow-security-Administrator
+  echo "Setting ROOT Admin"
+  withokta textnow-root-Administrator
+  echo "Setting ROOT Terraform"
+  withokta textnow-root-Terraform
+}

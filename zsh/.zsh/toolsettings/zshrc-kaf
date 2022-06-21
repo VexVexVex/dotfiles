@@ -1,0 +1,15 @@
+alias kafx="kaf config select-cluster"
+alias kafgl="kaf groups"
+alias kaftl="kaf topics"
+
+function kafpd {
+  echo "${@:2}" | kaf produce $1
+}
+
+function kafgd {
+  kaf group describe $1
+}
+
+function kaftd {
+  kaf topic describe $1
+}

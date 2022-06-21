@@ -15,11 +15,6 @@ alias runningcontainers="docker ps --format '{{.Image}}\\t{{.Names}}'"
 # Saml2aws login alias
 alias s2al='saml2aws login --skip-prompt'
 
-# Azure logins
-alias azl='az login --tenant valimailappprod.onmicrosoft.com'
-alias azs='az account set --subscription "Valimail Staging"'
-alias azp='az account set --subscription "Valimail Prod"'
-
 # Use nvim if available
 if (($+commands[nvim])); then
     alias vim=nvim
@@ -32,3 +27,5 @@ fi
 
 # Make ls better by default
 alias ls="ls -alhG"
+
+alias withokta-picker="withokta \$(cat ~/.okta/.config/profiles  | grep '\[.*\]' | grep -v DEFAULT | sed 's/\[//g' | sed 's/\]//g' | fzf)" 

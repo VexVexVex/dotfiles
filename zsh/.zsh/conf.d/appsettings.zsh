@@ -6,9 +6,6 @@ export HOMEBREW_AUTO_UPDATE_SECS=86400
 # export HOMEBREW_NO_GITHUB_API=1
 # export HOMEBREW_NO_AUTO_UPDATE=1
 
-# MPD server
-export MPD_HOST=officenoise.local
-
 # AWS settings
 export AWS_SDK_LOAD_CONFIG=1
 
@@ -22,13 +19,11 @@ export AWS_SDK_LOAD_CONFIG=1
 
 # Go
 if [[ $(arch) == 'arm64' ]]; then
-    gimme 1.18.1
+   gimme $(curl https://go.dev/dl/\?mode\=json | jq '.[0].version' | sed s'/go//' | sed s'/"//g') 
 else
     gimme stable
 fi
 source ~/.gimme/envs/latest.env
-export GOPATH=$HOME/go
-export GOPRIVATE="github.com/ValiMail/*"
 
 # Autoload github token
 if [[ -f ~/.githubtoken ]]; then
@@ -62,5 +57,5 @@ if command -v rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
-eval $(thefuck --alias fuck)
+eval $(thefuck --alias)
 

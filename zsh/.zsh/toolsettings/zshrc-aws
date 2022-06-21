@@ -1,0 +1,65 @@
+# Functions
+## EC2
+ec2_describe_instances() {
+  aws ec2 describe-instances --query 'Reservations[].Instances[].{Id: InstanceId, Name:Tags[?Key==`Name`].Value | [0], Ip:PrivateIpAddress, PublicIp:PublicIpAddress, Status:State.Name, Launched:LaunchTime}' --output table
+}
+
+## SSM
+### Example: ssm_get_params ; ssm_get_params /global
+ssm_get_params() {
+  aws ssm get-parameters-by-path --recursive --path $1 --query 'Parameters[*].{Key: Name, Value: Value}' --output table
+}
+
+### Example: ssm_get_param /global/tick/admin
+ssm_get_param() {
+  aws ssm get-parameter-history --name $1 --query 'Parameters[*].{Version: Version, Value: Value, Modifier: LastModifiedUser}' --output table
+}
+
+### Example: ssm_update_param /global/tick/admin wat
+ssm_update_param() {
+  aws ssm put-parameter --name $1 --value $2 --type String --overwrite
+}
+
+### Example: ssm_delete_param /global/tick/admin
+ssm_delete_param() {
+  aws ssm delete-parameter --name $1
+}
+
+## ECR
+ecr_list_repos() {
+  aws ecr describe-repositories --query 'reverse(sort_by(repositories,& createdAt))[].{"0 - Name":repositoryName, "1 - ARN":repositoryUri}' --output table
+}
+
+### Example: ecr_repo call-router
+ecr_repo() {
+  if [ "$#" -eq 2 ]
+  then
+    limit=$2
+  else
+    limit=3
+  fi
+  aws ecr describe-images --repository-name $1 --query "reverse(sort_by(imageDetails,& imagePushedAt))[0:$limit].{\"0 - Repository\": repositoryName, \"1 - Tag\": imageTags[0], \"2 - Digest\": imageDigest}" --output table
+}
+
+### Example: ecr_all 5
+ecr_all() {
+  repos=(`aws ecr describe-repositories --query 'repositories[].repositoryName' --output text | tr '\t' ' '`)
+  if [ "$#" -eq 1 ]
+  then
+    limit=$1
+  else
+    limit=3
+  fi
+  for repo in ${repos[@]}
+  do
+    aws ecr describe-images --repository-name $repo --query "reverse(sort_by(imageDetails,& imagePushedAt))[0:$limit].{\"0 - Repository\": repositoryName, \"1 - Tag\": imageTags[0], \"2 - Digest\": imageDigest}" --output table
+  done
+}
+
+aws_list_profiles() {
+  cat ~/.aws/credentials | grep "\[.*\]"
+}
+
+aws_set_profile() {
+  export AWS_PROFILE=$1
+}

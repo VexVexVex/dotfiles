@@ -16,7 +16,20 @@ path=(
     "$HOME/go/bin"
     "$HOME/.local/bin"
     "$HOME/.krew/bin"
+    "$HOME/.rvm/bin"
 )
+
+plugins=(
+    git
+    terraform
+    brew
+    docker
+    zsh_reload
+    kubectl
+    ssh-agent
+    1password
+)
+
 
 # Set up antigen
 source ~/.zsh/antigen.zsh
@@ -50,5 +63,17 @@ fpath=($fpath ~/.zsh/completions)
 . ~/.zsh/conf.d/functions.zsh
 . ~/.zsh/conf.d/kubectl.zsh
 
+if [ -d ~/.zsh/toolsettings ]; then
+    for i in ~/.zsh/toolsettings/*; do
+        source $i
+    done
+fi
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#Withokta
+if [ -f "/Users/duncan.miller/.okta/okta-aws" ]; then
+    . "/Users/duncan.miller/.okta/okta-aws"
+fi
+

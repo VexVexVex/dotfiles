@@ -1,0 +1,53 @@
+# exit if theme is not installed
+[[ .oh-my-zsh/themes/agnoster.zsh-theme ]] || exit 0
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+
+# turn kube_ps1 off by default unless ondirrc turns it on
+kubeoff
+
+prompt_k8s() {
+  KUBE_PS1_SYMBOL_ENABLE=true
+  KUBE_PS1_SEPARATOR=" "
+  KUBE_PS1_PREFIX=" "
+  KUBE_PS1_SUFFIX=" "
+  KUBE_PS1_SYMBOL_COLOR="white"
+  KUBE_PS1_CTX_COLOR="black"
+  KUBE_PS1_NS_COLOR="black"
+  KUBE_PS1_BG_COLOR=""
+  KUBE_PS1_DIVIDER=":"
+  if [ "$KUBE_PS1_ENABLED" = "on" ]; then
+    prompt_segment blue black "$(kube_ps1)"
+  fi
+}
+
+prompt_tf() {
+  unset AGNOSTER_PROMPT_TF_WORKSPACE
+  [[ "$PWD" = ~ ]] && return
+  if [ -d .terraform ]; then
+     AGNOSTER_PROMPT_TF_WORKSPACE=$(terraform workspace show 2> /dev/null) || return
+     TF_SEP=$'\u2302'
+     prompt_segment green black " $TF_SEP $AGNOSTER_PROMPT_TF_WORKSPACE "
+  fi
+}
+
+prompt_aws_profile() {
+  CLOUD_SEP=$'\u2601'
+  if [ -d .terraform ]; then
+    if [ "$AWS_PROFILE" != "textnow-root" ]; then
+      # we expect to use textnow-root with terraform:
+      prompt_segment red black " $CLOUD_SEP  $AWS_PROFILE "
+    fi
+  elif [ "$KUBE_PS1_ENABLED" = "on" ]; then
+    # TODO only display if AWS_PROFILE doesn't match expected for KUBE_PS1_CONTEXT
+    prompt_segment cyan black " $CLOUD_SEP  $AWS_PROFILE "
+  fi
+}
+
+# pop the last element off
+AGNOSTER_PROMPT_SEGMENTS=(${AGNOSTER_PROMPT_SEGMENTS:0:${#AGNOSTER_PROMPT_SEGMENTS[@]}-1})
+AGNOSTER_PROMPT_SEGMENTS+="prompt_aws_profile"
+AGNOSTER_PROMPT_SEGMENTS+="prompt_tf"
+AGNOSTER_PROMPT_SEGMENTS+="prompt_k8s"
+AGNOSTER_PROMPT_SEGMENTS+="prompt_end" # add it back in
+
