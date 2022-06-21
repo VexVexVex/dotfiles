@@ -10,7 +10,6 @@ tap 'homebrew/cask-drivers'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'versent/taps' # saml2aws
-tap 'aquasecurity/trivy'
 tap 'aws/tap' # aws tools
 tap 'goodwithtech/r' # dockle
 tap 'hashicorp/tap' # terraform, vagrant etc
@@ -23,15 +22,15 @@ cask 'xquartz'
 ## Normal homebrew stuff
 # Essentials
 brew 'awscli'
-brew 'fd'
-brew 'git'
-brew 'jq'
-brew 'mtr'
-brew 'nvim'
-brew 'ripgrep'
-brew 'sd'
-brew 'sqlite'
-brew 'stow'
+brew 'fd' # Fast implementation of Find
+brew 'git' 
+brew 'jq' # JSON Processor
+brew 'mtr' # Network Diagnostics
+brew 'nvim' 
+brew 'ripgrep' # find -exec grep but _good_
+brew 'sd' # better sed
+brew 'sqlite' 
+brew 'stow' 
 
 # Shell helpers
 brew 'bash'
@@ -41,38 +40,36 @@ brew 'autojump'
 brew 'fzf'
 
 # Nice to haves
-brew 'a2ps'
-brew 'ansible'
-brew 'awslogs'
+brew 'a2ps' # anything to postscript
+brew 'ansible' 
+brew 'awslogs' # CloudWatch logs for humans
 brew 'azure-cli'
-brew 'cfssl'
-brew 'cli53'
-brew 'colordiff'
-brew 'cookiecutter'
-brew 'feh'
-brew 'go-jira'
-brew 'gomplate'
-brew 'graphicsmagick'
-brew 'graphviz'
+brew 'cfssl' # Cloudflare SSL
+brew 'cli53' # Route 53 CLI Tool
+brew 'colordiff' # Diff but pretty. I never use this, not sure why I keep it
+brew 'cookiecutter' # Create projects from templates
+brew 'feh' # Fast Image Viewer
+brew 'go-jira' # Jira Cli client. Written in Go so it says Go in it
+brew 'gomplate' # Template rendering, see above for the Go bit
+brew 'graphicsmagick' # Image processing
+brew 'graphviz' # Graph visualization
 brew 'hub'
-brew 'kops'
+brew 'kops' # K8s Operations
 brew 'kubernetes-cli'
-brew 'ledger'
-brew 'magic-wormhole'
+brew 'ledger' # Accounting system
+brew 'magic-wormhole' # Drop from one comp to another
 brew 'mitmproxy'
-brew 'mosh'
+brew 'mosh' # Mobile shell
 brew 'mpc'
-brew 'mpv'
+brew 'mpv' # Cli video player
 brew 'minikube'
 brew 'nginx'
-brew 'ngrep'
+brew 'ngrep' # PCAP grep
 brew 'nmap'
 brew 'openvpn'
-brew 'pgbadger'
+brew 'pgbadger' # Postgresql Log Analyzer
 brew 'pgcli'
 brew 'postgresql'
-brew 'pssh'
-brew 'pwgen'
 brew 'qrencode'
 brew 'redis'
 brew 'saml2aws'
@@ -92,7 +89,6 @@ brew 'wdiff'
 brew 'wireguard-go'
 brew 'wireguard-tools'
 brew 'xz'
-brew 'rancher'
 
 # Programming languages
 brew 'elixir'
@@ -141,6 +137,5 @@ cask 'telegram'
 cask 'ubersicht'
 cask 'viscosity'
 cask 'vlc'
-cask 'vmware-fusion'
 cask 'wezterm'
 cask 'wireshark'
