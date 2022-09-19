@@ -58,4 +58,5 @@ if command -v rbenv > /dev/null; then
 fi
 
 eval $(thefuck --alias)
-
+ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/oracle-pem.key
