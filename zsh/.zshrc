@@ -63,17 +63,9 @@ fpath=($fpath ~/.zsh/completions)
 . ~/.zsh/conf.d/functions.zsh
 . ~/.zsh/conf.d/kubectl.zsh
 
-if [ -d ~/.zsh/toolsettings ]; then
-    for i in ~/.zsh/toolsettings/*; do
-        source $i
-    done
-fi
+# Pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-#Withokta
-if [ -f "/Users/duncan.miller/.okta/okta-aws" ]; then
-    . "/Users/duncan.miller/.okta/okta-aws"
-fi
-
