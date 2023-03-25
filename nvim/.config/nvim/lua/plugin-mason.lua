@@ -15,7 +15,7 @@ require('mason-lspconfig').setup({
     "jsonls",
     "pylsp",
     "solargraph",
-    "sumneko_lua",
+    "lua_ls",
     "terraformls",
     "vimls",
     "yamlls",
