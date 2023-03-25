@@ -18,7 +18,7 @@ export AWS_SDK_LOAD_CONFIG=1
 [[ -x "/usr/bin/nvim" ]] && export EDITOR=/usr/bin/nvim
 
 # Go
-if [[ $(arch) == 'arm64' ]]; then
+if [[ $(uname -m) == 'arm64' ]]; then
    gimme $(curl https://go.dev/dl/\?mode\=json | jq '.[0].version' | sed s'/go//' | sed s'/"//g') 
 else
     gimme stable
@@ -58,5 +58,5 @@ if command -v rbenv > /dev/null; then
 fi
 
 eval $(thefuck --alias)
+eval $(ssh-agent)
 ssh-add ~/.ssh/id_ed25519
-ssh-add ~/.ssh/oracle-pem.key
