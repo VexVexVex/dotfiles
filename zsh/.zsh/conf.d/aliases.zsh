@@ -28,4 +28,5 @@ fi
 # Make ls better by default
 alias ls="ls -alhG"
 
-alias withokta-picker="withokta \$(cat ~/.okta/.config/profiles  | grep '\[.*\]' | grep -v DEFAULT | sed 's/\[//g' | sed 's/\]//g' | fzf)" 
+alias gcp-infra="gcloud config set project invisible-infra"
+alias gcp-tools="gcloud config set project invisible-tools"

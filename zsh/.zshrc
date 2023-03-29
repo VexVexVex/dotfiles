@@ -17,6 +17,7 @@ path=(
     "$HOME/.local/bin"
     "$HOME/.krew/bin"
     "$HOME/.rvm/bin"
+    "$HOME/.nimble/bin:$PATH"
 )
 
 plugins=(
@@ -69,3 +70,10 @@ eval "$(pyenv virtualenv-init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f "/Users/duncan/.ghcup/env" ] && source "/Users/duncan/.ghcup/env" # ghcup-env
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/duncan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/duncan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/duncan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/duncan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
