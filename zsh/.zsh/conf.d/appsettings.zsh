@@ -16,6 +16,7 @@ export AWS_SDK_LOAD_CONFIG=1
 [[ -x "/usr/local/bin/vim" ]] && export EDITOR=/usr/local/bin/vim
 [[ -x "/usr/local/bin/nvim" ]] && export EDITOR=/usr/local/bin/nvim
 [[ -x "/usr/bin/nvim" ]] && export EDITOR=/usr/bin/nvim
+[[ -x "$HOME/.local/bin/lvim" ]] && export EDITOR=$HOME/.local/bin/lvim
 
 # Go
 if [[ $(uname -m) == 'arm64' ]]; then
