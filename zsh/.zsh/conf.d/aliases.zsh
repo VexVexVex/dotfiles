@@ -17,7 +17,7 @@ alias s2al='saml2aws login --skip-prompt'
 
 # Use nvim if available
 if (($+commands[nvim])); then
-    alias vim=nvim
+    alias vim=lvim
 fi
 
 # Use hub command if available
