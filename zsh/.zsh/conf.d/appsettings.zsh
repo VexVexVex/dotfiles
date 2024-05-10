@@ -18,14 +18,6 @@ export AWS_SDK_LOAD_CONFIG=1
 [[ -x "/usr/bin/nvim" ]] && export EDITOR=/usr/bin/nvim
 [[ -x "$HOME/.local/bin/lvim" ]] && export EDITOR=$HOME/.local/bin/lvim
 
-# Go
-if [[ $(uname -m) == 'arm64' ]]; then
-   gimme $(curl https://go.dev/dl/\?mode\=json | jq '.[0].version' | sed s'/go//' | sed s'/"//g') 
-else
-    gimme stable
-fi
-source ~/.gimme/envs/latest.env
-
 # Autoload github token
 if [[ -f ~/.githubtoken ]]; then
     GITHUB_TOKEN=$(cat ~/.githubtoken)
@@ -59,5 +51,5 @@ if command -v rbenv > /dev/null; then
 fi
 
 eval $(thefuck --alias)
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_ed25519
+eval $(ssh-agent) &>/dev/null
+ssh-add ~/.ssh/id_ed25519 2>/dev/null

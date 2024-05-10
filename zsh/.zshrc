@@ -18,6 +18,7 @@ path=(
     "$HOME/.krew/bin"
     "$HOME/.rvm/bin"
     "$HOME/.nimble/bin:$PATH"
+    "/opt/nvim-linux64/bin"
 )
 
 plugins=(
@@ -65,6 +66,8 @@ fpath=($fpath ~/.zsh/completions)
 . ~/.zsh/conf.d/kubectl.zsh
 
 # Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
