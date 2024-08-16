@@ -15,9 +15,11 @@ alias runningcontainers="docker ps --format '{{.Image}}\\t{{.Names}}'"
 # Saml2aws login alias
 alias s2al='saml2aws login --skip-prompt'
 
-# Use nvim if available
-if (($+commands[nvim])); then
+# Use lvim/nvim if available
+if (($+commands[lvim])); then
     alias vim=lvim
+elseif (($+commands[nvim])); then
+    alias vim=nvim
 fi
 
 # Use hub command if available
@@ -26,12 +28,4 @@ if (($+commands[hub])); then
 fi
 
 # Make ls better by default
-alias ls="ls -alhG"
-
-alias gcp-infra="gcloud config set project invisible-infra"
-alias gcp-tools="gcloud config set project invisible-tools"
-alias gcp-stage="gcloud config set project invisible-stage"
-
-alias k8s-stage="gcloud container clusters get-credentials stage-cluster --region us-west1 --project invisible-stage"
-alias k8s-tools="gcloud container clusters get-credentials tools-cluster --region us-west1 --project invisible-tools"
-alias k8s-prod="gcloud container clusters get-credentials invisible-prod-cluster  --region us-west1 --project invisible-infra"
+alias ls="ls -alhG --color"
