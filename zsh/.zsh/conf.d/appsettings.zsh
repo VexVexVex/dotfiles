@@ -54,4 +54,4 @@ eval $(thefuck --alias)
 eval $(ssh-agent) &>/dev/null
 ssh-add ~/.ssh/id_ed25519 2>/dev/null
 
-export MANPAGER='nvim +Man!'
+export MANPAGER='lvim +Man!'

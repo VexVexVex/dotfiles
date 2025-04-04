@@ -45,6 +45,7 @@ brew 'cli53' # Route 53 CLI Tool
 brew 'colordiff' # Diff but pretty. I never use this, not sure why I keep it
 brew 'cookiecutter' # Create projects from templates
 brew 'feh' # Fast Image Viewer
+brew 'ghostscript'
 brew 'go-jira' # Jira Cli client. Written in Go so it says Go in it
 brew 'gomplate' # Template rendering, see above for the Go bit
 brew 'graphicsmagick' # Image processing
@@ -53,6 +54,7 @@ brew 'hub'
 brew 'kops' # K8s Operations
 brew 'kubernetes-cli'
 brew 'ledger' # Accounting system
+brew 'libxv'
 brew 'magic-wormhole' # Drop from one comp to another
 cask 'mitmproxy'
 brew 'mosh' # Mobile shell
@@ -66,6 +68,7 @@ brew 'openvpn'
 brew 'pgbadger' # Postgresql Log Analyzer
 brew 'pgcli'
 brew 'postgresql'
+brew 'pygments'
 brew 'qrencode'
 brew 'redis'
 brew 'saml2aws'
@@ -76,6 +79,7 @@ brew 'sox'
 brew 'ssh-copy-id'
 brew 'switchaudio-osx'
 brew 'sysdig'
+brew 'tealdeer'
 brew 'telnet'
 brew 'tarsnap'
 brew 'thefuck'
@@ -118,6 +122,7 @@ cask 'audio-hijack'
 cask 'bartender'
 cask 'bibdesk'
 cask 'dash'
+cask 'djview'
 cask 'dropbox'
 cask 'dungeon-crawl-stone-soup-tiles'
 cask 'gas-mask'
