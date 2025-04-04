@@ -4,10 +4,6 @@
 # To view what things are installed in homebrew
 
 ## Taps
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-drivers'
-tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'versent/taps' # saml2aws
 tap 'aws/tap' # aws tools
@@ -58,7 +54,7 @@ brew 'kops' # K8s Operations
 brew 'kubernetes-cli'
 brew 'ledger' # Accounting system
 brew 'magic-wormhole' # Drop from one comp to another
-brew 'mitmproxy'
+cask 'mitmproxy'
 brew 'mosh' # Mobile shell
 brew 'mpc'
 brew 'mpv' # Cli video player
@@ -109,9 +105,7 @@ brew 'jmespath/jmespath/jp'
 
 # Hashicorp
 brew 'consul'
-brew 'packer'
 cask 'vagrant'
-brew 'vault'
 brew 'tfenv'
 
 ## Fonts
@@ -120,7 +114,6 @@ cask 'font-hack-nerd-font'
 ## Mac apps (casks)
 cask '1password'
 cask 'alfred'
-cask 'arduino'
 cask 'audio-hijack'
 cask 'bartender'
 cask 'bibdesk'

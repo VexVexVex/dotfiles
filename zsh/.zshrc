@@ -19,13 +19,13 @@ path=(
     "$HOME/.rvm/bin"
     "$HOME/.nimble/bin:$PATH"
     "/opt/nvim-linux64/bin"
+    "$HOME/.rd/bin"
 )
 
 plugins=(
     git
     terraform
     brew
-    docker
     zsh_reload
     kubectl
     ssh-agent
@@ -42,7 +42,6 @@ antigen use oh-my-zsh
 antigen bundle autojump
 antigen bundle aws
 antigen bundle direnv
-antigen bundle docker
 antigen bundle fzf
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -75,13 +74,13 @@ eval "$(pyenv virtualenv-init -)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #[ -f "/Users/duncan/.ghcup/env" ] && source "/Users/duncan/.ghcup/env" # ghcup-env
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/alexbuko-miller/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alexbuko-miller/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/alexbuko-miller/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alexbuko-miller/google-cloud-sdk/completion.zsh.inc'; fi
-
 # opam configuration
 [[ ! -r /Users/alexbuko-miller/.opam/opam-init/init.zsh ]] || source /Users/alexbuko-miller/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 [ -f "/Users/alexbuko-miller/.ghcup/env" ] && source "/Users/alexbuko-miller/.ghcup/env" # ghcup-env
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/alex/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alex/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/alex/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alex/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

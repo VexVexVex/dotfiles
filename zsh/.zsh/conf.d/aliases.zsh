@@ -18,7 +18,7 @@ alias s2al='saml2aws login --skip-prompt'
 # Use lvim/nvim if available
 if (($+commands[lvim])); then
     alias vim=lvim
-elseif (($+commands[nvim])); then
+elif (($+commands[nvim])); then
     alias vim=nvim
 fi
 
@@ -29,3 +29,8 @@ fi
 
 # Make ls better by default
 alias ls="ls -alhG --color"
+
+alias k8s-prod="gcloud config set project invisible-infra && gcloud container clusters get-credentials invisible-prod-cluster --region us-west1"
+alias k8s-stage="gcloud config set project invisible-stage && gcloud container clusters get-credentials stage-cluster --region us-west1"
+alias k8s-tools="gcloud config set project invisible-tools && gcloud container clusters get-credentials tools-cluster --region us-west1"
+alias k8s-internal="gcloud config set project invisible-tools && gcloud container clusters get-credentials internal-tooling-cluster --region us-west1"
