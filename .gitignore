@@ -3,5 +3,5 @@ ssh/.ssh/id*
 ssh/.ssh/known*
 .idea/*
 */.idea/*
-*/.pgcli/log
-*/.pgcli/history
+misc/.config/pgcli/log
+misc/.config/pgcli/history
